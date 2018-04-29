@@ -23,16 +23,22 @@
             let entries = feed.feed.entry.length;
             let random_num = Math.floor( ( Math.random() * entries ) );
             let content = feed.feed.entry[random_num]['content']['$t'].split(',');
+
             let phrase = content[0].replace('phrase: ', '');
             let story  = content[1].replace(' smallstory: ', '');
             let story_cont = content[2];
 
-            $( '.phrase' ).html( phrase );
-
-            if( null == story_cont ){
-                $( '.story' ).html( story );
+            if( content[1].indexOf( 'smallstory:') === -1 ){
+                $( '.phrase' ).html( phrase + story );
+                story_cont = content[2].replace(' smallstory: ', '');
+                $( '.story' ).html( story_cont );
             } else {
-                $( '.story' ).html( story + story_cont);
+                $( '.phrase' ).html( phrase );
+                if( null == story_cont ){
+                    $( '.story' ).html( story );
+                } else {
+                    $( '.story' ).html( story + story_cont);
+                }
             }
         }
     }
