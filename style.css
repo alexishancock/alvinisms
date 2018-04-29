@@ -3,3 +3,18 @@ body {
     font-family: 'Roboto', sans-serif; 
     color: white;
 }
+
+#content {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1em;
+}

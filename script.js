@@ -34,7 +34,6 @@
             } else {
                 $( '.story' ).html( story + story_cont);
             }
-
         }
     }
 
