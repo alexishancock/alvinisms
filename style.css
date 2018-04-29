@@ -23,4 +23,7 @@ p {
     h1 {
         font-size: 2em;
     }
+    p {
+        text-align: justify;
+    }
 }
